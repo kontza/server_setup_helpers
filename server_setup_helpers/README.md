@@ -16,5 +16,5 @@ notification:
   recipient: [the default recipient for the notifications]
 ```
 
-## Role: autoupdates
+## Autoupdates
 This role sets up unattended upgrades. Upgrade period is seven days, and the system will be rebooted at 03:00 regardless of logged in users.
