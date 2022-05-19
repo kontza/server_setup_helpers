@@ -1,9 +1,4 @@
 ---
-- name: WOT?!?
-  debug:
-    var: ansible_become_pass
-  tags: est
-
 - name: Install generic packages in preparation for future logins
   ansible.builtin.package:
     name: "{{item}}"
