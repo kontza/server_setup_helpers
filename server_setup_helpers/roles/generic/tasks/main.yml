@@ -29,16 +29,6 @@
         exa -laFag $argv
       end
 
-- name: Set Neovim to be the editor for 'sudoedit'
-  tags: est
-  ansible.builtin.command:
-    cmd: update-alternatives --set editor /usr/bin/nvim
-
-- name: Set timezone and update time
-  tags: est
-  ansible.builtin.command:
-    cmd: timedatectl set-timezone Europe/Helsinki
-
 - name: Make sure /etc/hosts contain host name with a proper IP address
   tags: est
   ansible.builtin.lineinfile:
