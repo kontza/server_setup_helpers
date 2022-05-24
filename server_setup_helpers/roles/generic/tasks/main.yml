@@ -2,7 +2,7 @@
 - name: Install generic packages in preparation for future logins
   ansible.builtin.package:
     name: "{{item}}"
-    state: latest
+    state: installed
   loop:
     - python3-pip
     - neovim
@@ -11,6 +11,22 @@
     - fish
     - tmux
     - exa
+    - msmtp
+    - msmtp-mta
+    - mailx
+    - firewalld
+  register: generic_packages
+
+- name: Set hostname
+  ansible.builtin.copy:
+    dest: /etc/hostname
+    content: |
+      {{inventory_hostname}}
+
+- name: Reboot
+  ansible.builtin.fail:
+    msg: Now reboot, we installed new apps, then re-run this role.
+  when: generic_packages.changed
 
 - name: Set fish as the default shell for {{ansible_user}}
   ansible.builtin.user:
