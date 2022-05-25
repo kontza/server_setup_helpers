@@ -15,6 +15,7 @@
     - msmtp-mta
     - mailx
     - firewalld
+    - ncat
   register: generic_packages
 
 - name: Set hostname
