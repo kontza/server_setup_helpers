@@ -11,3 +11,4 @@ generic_packages:
   - mailx
   - firewalld
   - ncat
+  - acl
