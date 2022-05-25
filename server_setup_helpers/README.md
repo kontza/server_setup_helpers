@@ -2,7 +2,7 @@
 
 Roles within this collection are common to all my server setups. These roles assume the following:
 - A MicroOS server with a non-root user who can log in with SSH keys.
-- Python 3 installed.
+- Python 3 installed. This is better to be installed post system install, but before Ansible run, as the first transactional pkg install creates the required file for Ansible's install to detect that the system is a transactional system.
 
 # Roles
 
