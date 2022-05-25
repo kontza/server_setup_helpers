@@ -1,0 +1,13 @@
+generic_packages:
+  - python3-pip
+  - neovim
+  - lnav
+  - bash-completion
+  - fish
+  - tmux
+  - exa
+  - msmtp
+  - msmtp-mta
+  - mailx
+  - firewalld
+  - ncat
