@@ -10,9 +10,9 @@
       account gmail
       host smtp.gmail.com
       auth on
-      from {{notification.sender}}
-      user {{notification.sender}}
-      password {{notification.password}}
+      from {{notifications.sender}}
+      user {{notifications.sender}}
+      password {{notifications.password}}
 
       account default: gmail
       aliases /etc/aliases
@@ -21,8 +21,8 @@
   ansible.builtin.copy:
     dest: /etc/aliases
     content: |
-      root:{{notification.recipient}}
-      default:{{notification.recipient}}
+      root:{{notifications.recipient}}
+      default:{{notifications.recipient}}
 
 - name: Set full usernames
   ansible.builtin.command:
